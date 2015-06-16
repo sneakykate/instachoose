@@ -1,0 +1,22 @@
+{
+  "name": "week-2-assessment",
+  "version": "1.0.0",
+  "description": "##Summary Week 1 assessment will be used to assess your understanding of the material provided in the past week. At the end of the period, commit your work and submit a pull request.",
+  "main": "Gulpfile.js",
+  "scripts": {
+    "start": "./node_modules/.bin/gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browserify": "^10.2.4",
+    "gulp": "^3.9.0",
+    "jquery": "^2.1.4",
+    "react": "^0.13.3",
+    "react-style": "^0.5.5",
+    "reactify": "^1.1.1",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.2.2"
+  }
+}
