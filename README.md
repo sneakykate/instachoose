@@ -19,7 +19,7 @@ Week 1 assessment will be used to assess your understanding of the material prov
 ````
 https://codesmith-precourse.firebaseio.com/instagram/-JqL35o8u6t3dTQaFXSV.json
 ````
-4. DO NOT WORRY TOO MUCH ABOUT SYLING.
+4. DO NOT SPEND TIME STYLING.
 
 ##What do I do when I am done?
 1. When completed - commit and push your changes to your github
