@@ -8,7 +8,6 @@ Week 3 assessment will be used to assess your understanding of the material prov
 ````
 npm install
 ````
-
 1. Complete the challenge in located in the client directory.
 
 1. Create a React app with the following Component hierarchy:
