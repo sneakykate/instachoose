@@ -1,6 +1,7 @@
 var React = require('react');
 var StyleSheet = require('react-style');
 
+// FeedItem should consist of an image (src contained in the data from the AJAX request)
 var FeedItem = React.createClass({
   render: function() {
     // put render logic here

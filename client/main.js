@@ -2,6 +2,7 @@ var React = require('react');
 var Feed = require('./Feed');
 var StyleSheet = require('react-style');
 
+// App consists of one feed
 var App = React.createClass({
   render: function() {
     return (
