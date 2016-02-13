@@ -1,4 +1,4 @@
-#Week-3-Assessment
+#Week-2-Assessment
 
 ##Summary
 Week 3 assessment will be used to assess your understanding of the material provided in the past week. At the end of the period, commit your work and submit a pull request.
