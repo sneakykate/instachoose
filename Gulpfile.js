@@ -2,14 +2,16 @@ var gulp = require('gulp');
 var source = require('vinyl-source-stream');
 var browserify = require('browserify');
 var watchify = require('watchify');
-var reactify = require('reactify');
+var babelify = require('babelify');
 
 gulp.task('browserify', scripts);
 
 function scripts() {
   var bundler = browserify({
     entries: ['./client/main.js'],
-    transform: [reactify], // We want to convert JSX to normal javascript
+    transform: [babelify.configure({
+      presets: [ 'es2015', 'react' ],
+    })],
     debug: true,
     cache: {},
     packageCache: {},
@@ -29,7 +31,6 @@ function scripts() {
       .pipe(gulp.dest('./build/'));
       console.log('Updated!', (Date.now() - updateStart) + 'ms');
     })
-    // Create the initial bundle when starting the task
     .bundle()
     .on('error', function(err) {
       console.log('Error with compiling components', err.message);
