@@ -1,7 +1,9 @@
 #Week-2-Assessment
 
 ##Summary
-Week 3 assessment will be used to assess your understanding of the material provided in the past week. At the end of the period, commit your work and submit a pull request.
+Week 2 assessment will be used to assess your understanding of the material provided in the past week. At the end of the period, commit your work and submit a pull request to your branch name.
+
+This code has been tested on and is intended to run on Node 5.X.
 
 ##How do I get started?
 1. Run the following command to install external dependencies:
