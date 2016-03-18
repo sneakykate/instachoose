@@ -1,0 +1,25 @@
+language: node_js
+node_js:
+  - '5.5.0'
+notifications:
+  email: false
+before_install:
+  - travis_retry nvm install 5.5.0
+  - if [ $TRAVIS_SECURE_ENV_VARS == "true" ]; then
+      npm install request;
+      npm run update-package;
+    fi
+env:
+  global:
+    - secure: "OoR/Dxl8eyCL5wwv4yxYLygAtCbE9lcmxd1UyMT6JEQBhzvgQrG8Akeyj8vHus9FF0MwSzYqdA9ofNDc985iLCMi6exV8PdcogDhfDSV3eHuCndoooDkW7r6s5FuQX7EYa6ZaUvaDu4WV2wdZBSLGrEpD+puOH2jWdtYhE1NBRg="
+    - MERGE_TOKEN=e7de2e3472f394690b09c98998a1804d79ed172e
+    - SENDGRID_USERNAME=azai91
+    - secure: "dbp9zLsc/R3KV2szdeGVUlbnMlo02QeCQ3hdO8861/LENe1BO/P04WPDM0Sto5pA28SMfI9uSLyeOwyS40r6zFtV1gjgW9iXjQOlAhtmO0TZ29n1sPQdNvhJNkq2QB5ipZhhZp0PBMaKR8PZRORZGKnZRvZ2kjs77AxR5s9fuJw="
+    - secure: "IefyZiRK6R6a1RuMVRj1y9APRqivqR8uZ8sbsgYfPe3R2kKqN/Riu+hMG/c4P1ZIrvpd/6EYimdwsn+E4ex6YLe+Bhx3/igw9x/WEqZ56N61zWgTt8G7B6HtVs2yfBgiyhXY9sNJwgy0xePQDfH4REfkmeVL+bslg9pNtIITqrU="
+    - secure: "ERN4GUhV/WtPHOhB1HzAIw+G0xow9vAWwx8HpdD2kUjGl7QoNtVk6Duys7txq0EiBIY4vDZBfvU+yVpUyswJvEaw/5q+dZ+4Py311uebjbqHSdQNiY9hHCqJ2TGng0uVWz+2tzV5CJQ7e+jXaHwcUBv38ha74hO9y6nuh2hixeI="
+script:
+  - if [ $TRAVIS_SECURE_ENV_VARS == "true" ]; then
+      npm run get-test-utils && npm run test ; npm run lint ; npm run report;
+    else
+      npm run merge;
+    fi

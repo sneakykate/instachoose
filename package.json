@@ -5,7 +5,11 @@
   "main": "Gulpfile.js",
   "scripts": {
     "start": "./node_modules/.bin/gulp",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "get-test-utils": "node test/get-test-utils.js",
+    "merge": "node test/merge.js",
+    "update-package": "node test/update-package.js",
+    "lint": "node test/lint.js public/js/main.js",
+    "test": "export PORT=3333; mocha -R mocha-email-reporter -O json=test/output.json --timeout 10000 test/recruitment-assessment-boggle.js"
   },
   "author": "",
   "license": "ISC",
