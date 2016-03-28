@@ -23,10 +23,12 @@ npm start
 
 ## Specification
 1. Create a React app with the following Component hierarchy:
+```
                   Feed
                     |
                     V
                   FeedItem
+```
 **Here is a sample of how the components should be nested.**
 ![](https://www.dropbox.com/s/lf38iqjec2nfjcs/instagram-feed_shrink.png?dl=1)
 
