@@ -1,5 +1,4 @@
 const React = require('react');
-const StyleSheet = require('react-style');
 
 // FeedItem should consist of an image (src contained in the data from the AJAX request)
 const FeedItem = React.createClass({
@@ -12,13 +11,13 @@ const FeedItem = React.createClass({
   },
 });
 
-const styles = StyleSheet.create({
+const styles = {
   container: {
     border: '1px solid black',
     height: 100,
     width: '100%',
     flex: 1,
   },
-});
+};
 
 module.exports = FeedItem;

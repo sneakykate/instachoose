@@ -23,13 +23,14 @@
     "eslint": "^2.4.0",
     "eslint-config-airbnb": "^6.1.0",
     "eslint-plugin-react": "^4.2.3",
-    "express": "^4.13.4",
-    "react": "^0.14.7",
-    "react-dom": "^0.14.7",
-    "watchify": "^3.7.0",
     "expect": "^1.15.2",
-    "skin-deep": "^0.15.0",
+    "express": "^4.13.4",
+    "mocha-email-reporter": "^1.0.3",
+    "react": "^0.14.7",
     "react-addons-test-utils": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "skin-deep": "^0.15.0",
+    "watchify": "^3.7.0",
     "zombie": "^4.2.1"
   }
 }

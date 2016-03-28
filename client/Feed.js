@@ -1,5 +1,4 @@
 const React = require('react');
-const StyleSheet = require('react-style');
 const FeedItem = require('./FeedItem');
 
 // Feed contains multiple FeedItems
@@ -23,7 +22,7 @@ const Feed = React.createClass({
   },
 });
 
-const styles = StyleSheet.create({
+const styles = {
   container: {
     border: '1px black solid',
     width: '50%',
@@ -32,6 +31,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: '10px',
   },
-});
+};
 
 module.exports = Feed;
