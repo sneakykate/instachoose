@@ -9,9 +9,8 @@
     "get-test-utils": "node test/get-test-utils.js",
     "merge": "node test/merge.js",
     "update-package": "node test/update-package.js",
-    "lint": "node test/lint.js public/js/main.js",
-    "test-keep": "mocha -R mocha-email-reporter -O json=test/output.json --timeout 10000 test/recruitment-assessment-boggle.js",
-    "test": "npm run build-js && mocha --timeout 10000 test/week-2-assessment.js"
+    "lint": "node test/lint.js client/js/main.js client/js/Feed.js client/js/FeedItem.js",
+    "test": "npm run build-js && mocha -R mocha-email-reporter -O json=test/output.json --timeout 10000 test/week-2-assessment.js"
   },
   "author": "",
   "license": "ISC",
