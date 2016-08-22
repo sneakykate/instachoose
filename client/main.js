@@ -9,7 +9,7 @@ const App = React.createClass({
   render() {
     return (
       <div styles={styles.container}>
-        <Feed />
+        <Feed url = {url}/>
       </div>
     );
   },
