@@ -4,8 +4,17 @@ const React = require('react');
 const FeedItem = React.createClass({
   render() {
     // put render logic here
+    const imageElems = []; 
+    this.props.urls.forEach(function(link){
+      let key = Math.random() + link.charAt(0);
+      console.log($.get(link));
+      imageElems.push(<div key = {key} className="imageInFeed"><img key = {key} src={link} /></div>)
+    });
+    
     return (
+
       <div styles={styles.container}>
+        {imageElems}
       </div>
     );
   },
