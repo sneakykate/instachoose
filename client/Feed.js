@@ -1,5 +1,5 @@
 const React = require('react');
-const FeedItem = require('./FeedItem');
+const ChoiceItem = require('./ChoiceItem');
 
 // Feed contains multiple FeedItems
 // Put AJAX in this Component
@@ -7,12 +7,12 @@ const Feed = React.createClass({
   getInitialState() {
     
     return {
-      urls: [],
+      choices: [],
     };
   },
 
   componentDidMount() {
-    $.get(this.props.url, (data) => {this.setState({urls: data})
+    $.get(this.props.url, (data) => {this.setState({choices: data})
   });
   },
 
@@ -21,7 +21,7 @@ const Feed = React.createClass({
     // put render logic here
     return (
       <div id="feed" styles={styles.container}>
-        <FeedItem urls = {this.state.urls}/>
+        <ChoiceItem urls = {this.state.choices}/>
       </div>
     );
   },

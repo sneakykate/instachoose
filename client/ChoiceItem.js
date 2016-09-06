@@ -1,20 +1,20 @@
 const React = require('react');
 
 // FeedItem should consist of an image (src contained in the data from the AJAX request)
-const FeedItem = React.createClass({
+const ChoiceItem = React.createClass({
   render() {
     // put render logic here
-    const imageElems = []; 
-    this.props.urls.forEach(function(link){
+    const choiceItems = []; 
+    this.props.choices.forEach(function(item){
       let key = Math.random() + link.charAt(0);
       console.log($.get(link));
-      imageElems.push(<div key = {key} className="imageInFeed"><img key = {key} src={link} /></div>)
+      choiceItems.push(<div key = {key} className="imageInFeed"><img key = {key} src={link} /></div>)
     });
     
     return (
 
       <div styles={styles.container}>
-        {imageElems}
+        {choiceItems}
       </div>
     );
   },
@@ -29,4 +29,4 @@ const styles = {
   },
 };
 
-module.exports = FeedItem;
+module.exports = ChoiceItem;
