@@ -10,7 +10,7 @@ const Item = require('./item-model');
 const projectSchema = new Schema({
   // define schema here
   id: String,
-  projname: { type: String},
+  projname: { type: String, required: true },
 	htmlLink: String,
 	sequence: Number,
 	created: Date,
