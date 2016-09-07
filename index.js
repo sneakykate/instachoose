@@ -2,12 +2,15 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var projectCtrl = require('./server-mongoose/controllers/projectController.js');
+var bodyParser = require('body-parser');
 
 app.use(express.static(__dirname)); // serves the index.html
+app.use(bodyParser.json());
+
 
 app.get('/api', projectCtrl.index);
 
-app.post('/add', projectCtrl.newproj, (req, res) => { res.redirect('/'); });
+app.post('/add', projectCtrl.newproj, (req, res) => { res.end(); });
 
 
 

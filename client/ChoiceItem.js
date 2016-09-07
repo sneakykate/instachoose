@@ -6,9 +6,12 @@ const ChoiceItem = React.createClass({
     // put render logic here
     const choiceItems = []; 
     this.props.choices.forEach(function(item){
-      let key = Math.random() + link.charAt(0);
-      console.log($.get(link));
-      choiceItems.push(<div key = {key} className="imageInFeed"><img key = {key} src={link} /></div>)
+      let project = item.projname;
+      let rating = item.rating;
+      let id = item._id;
+      let chosen = item.chosen;
+      // console.log(item.projname);
+      choiceItems.push(<div key={id} className="item">{project} : {rating} : {chosen}</div>);
     });
     
     return (
@@ -17,8 +20,9 @@ const ChoiceItem = React.createClass({
         {choiceItems}
       </div>
     );
-  },
+  }
 });
+
 
 const styles = {
   container: {
