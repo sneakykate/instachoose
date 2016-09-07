@@ -96,7 +96,6 @@ h4 {
 	background-color: #f9f9f9;
 }
 
-
 #leftnav {
 	float: left;
 }
@@ -105,7 +104,12 @@ h4 {
 }
 
 /* ~~~~~~~~~~~~ purple ~~~~~~~~~~~~~~~~~*/
-
+.container {
+	width: 90%;
+	min-width:400px;
+	margin-top:3px;
+	overflow:auto;
+}
 .wholething {
 	background-color: #614987;
 	color:white;
@@ -116,7 +120,16 @@ h4 {
 input{
 	line-height: 2em;
 	padding:3px;
+	margin-right:4px;
 }
+p {
+	line-height: 2em;
+	text-align:left;
+	padding:3px;
+	margin-left:50px;
+	float:left;
+}
+
 #create{
 	width: 40%;
 }
@@ -151,29 +164,40 @@ button:focus {
 .toggler {
 	float:left;
 }
+.newhead {
+	height:30px;
+	overflow: auto;
+}
 .item {
   color:white;
 	line-height: 1.5em;
   padding:10px;
+	text-align:left;
 }
 .item a {
   color:white;
 	line-height: 1.5em;
+	height:20px;
   padding:10px;
 	text-decoration: underline;
+	text-align:left;
 }
 .projectinfo{
   width: 70%;
   float:left;
 	padding:5px;
+	text-align:left;
 }
 .rating{
-  width: 20px;
+  min-width: 35px;
 	float: left;
+	text-align: left;
 }
 .chosen{
-	width: 20px;
+	min-width: 35px;
 	float: left;
+	margin-left:4px;
+	text-align: left;
 }
 
 #logo {

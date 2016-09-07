@@ -51,12 +51,31 @@ const Project = React.createClass({
   },
 
   changeUser: function() {
-    console.log("submitter is" + this.state.submitter);
     let temp = {};
     temp.submitter=!this.state.submitter;
     this.setState(temp);
-    console.log("submitter is" + this.state.submitter);
   },
+
+  sortfunc: function(field){
+        var x = this.state.choices;
+        x.sort(function(a, b){
+          a[field] < b[field];
+        });
+        console.log(x[0][field]);
+        console.log(x);
+        this.setState({choices: x})
+      },
+  
+  updateChosen: function(item){
+    var creationRequest = 
+      $.ajax({
+      type: 'PUT',
+      url: 'http://localhost:3000/choose',
+      data: JSON.stringify(item),
+      contentType: 'application/json',
+      processData: false
+      });
+    },
 
   render() {
     // put render logic here
@@ -74,14 +93,19 @@ const Project = React.createClass({
         </div>
     }
     else{
-      viewing = <div><button className="toggler" onClick={this.changeUser}>Switch User</button></div>
+
+      viewing = <div>
+      <div className="newhead"><h1>Choose!</h1></div>
+      <button className="toggler" onClick={this.changeUser}>Switch User</button>
+        
+      </div>
     }
     
     return (
-      <div id="project" styles={styles.container}>
+      <div id="project" styles={styles.container} >
         {viewing}
         
-        <ChoiceItem choices = {this.state.choices}/>
+        <ChoiceItem choices = {this.state.choices} sortBy = {this.state.sortBy} sortfunc={this.sortfunc} submitter={this.state.submitter} updateChosen={this.updateChosen}/>
       </div>
     );
   },

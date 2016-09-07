@@ -12,7 +12,7 @@ app.get('/api', projectCtrl.index);
 
 app.post('/add', projectCtrl.newproj, (req, res) => { res.end(); });
 
-app.put('/choose', projectCtrl.newproj, (req, res) => { res.end(); });
+app.put('/choose', projectCtrl.update, (req, res) => { res.end(); });
  
 app.listen(3000, () => {
   console.log('Server listening on port 3000');

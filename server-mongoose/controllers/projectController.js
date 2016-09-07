@@ -7,6 +7,20 @@ function newproj(req, res, next){
   });
   next();
 }
+//put requests from Postman working
+function update(req, res, next){
+	console.log("update called");
+	console.log(req.body);
+  Project.findById(req.body[0]._id, function(err, proj){
+		if(err) console.error(err);
+		proj.chosen = true;
+		proj.save(function(err, updatedProj){
+			if(err) console.error(err);
+		});
+	});
+
+  next();
+}
 
 function index(req, res) {
 	Project.find(req.query).then(function(result){
@@ -28,4 +42,4 @@ function show(req, res) {
 	});
 }
 
-module.exports = { index, show, newproj};
+module.exports = { index, show, newproj, update};

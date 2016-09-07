@@ -2,21 +2,30 @@ const React = require('react');
 
 // FeedItem should consist of an image (src contained in the data from the AJAX request)
 const ChoiceItem = React.createClass({
+  updateSort: function(field){
+    this.props.sortfunc(field);
+  },
+
   render() {
     // put render logic here
     const choiceItems = []; 
+    let submitter = this.props.submitter;
     this.props.choices.forEach(function(item){
       let project = item.projname;
       let rating = item.rating;
       let id = item._id;
       let link = item.htmlLink;
       let chosen = item.chosen;
+      
       let chosenSym = 'x'
       if(chosen === false){
         chosenSym = 'x';
       }
       if(chosen === true){
         chosenSym = '√'
+      }
+      if(submitter===false){
+        chosenSym = <input type="checkbox" onChange={function(){item.chosen=!item.chosen; this.props.updateChosen.bind(null, item)}}></input>
       }
       // console.log(item.projname);
       choiceItems.push(
@@ -29,7 +38,10 @@ const ChoiceItem = React.createClass({
     });
     
     return (
-      <div >
+      <div className="container" >
+        <div className="projectinfo header" onClick={this.updateSort.bind(this, 'projname')}>Items</div>
+        <div className="rating header" onClick={this.updateSort.bind(this, 'rating')}>Score</div>
+        <div className="chosen header" onClick={this.updateSort.bind(this, 'chosen')}>Chosen</div>
         {choiceItems}
       </div>
     );
