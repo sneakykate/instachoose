@@ -13,7 +13,7 @@ function update(req, res, next){
 	console.log(req.body);
   Project.findById(req.body[0]._id, function(err, proj){
 		if(err) console.error(err);
-		proj.chosen = true;
+		proj.chosen = req.body[0].chosen;
 		proj.save(function(err, updatedProj){
 			if(err) console.error(err);
 		});

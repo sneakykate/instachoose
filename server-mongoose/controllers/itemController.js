@@ -2,7 +2,6 @@ const Item = require('../models/item-model');
 
 function newitem(req, res, next){
   Item.create(req.body, () => {
-    console.log(req.body);
   }, err => {
     if (err) throw err;
   });

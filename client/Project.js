@@ -19,8 +19,9 @@ const Project = React.createClass({
   },
 
   getData(){
-    $.get(this.props.url, (data) => {this.setState({choices: data});
-  });
+    $.get(this.props.url, (data) => {
+      this.setState({ choices: data });
+    });
   },
 
   handleSubmit: function(event) {
@@ -28,15 +29,17 @@ const Project = React.createClass({
     var description = this.refs.description.value;
     var rating = this.refs.rating.value;
     var link = this.refs.link.value;
+    var price = this.refs.price.value;
     this.refs.description.value = '';
     this.refs.rating.value = '';
     this.refs.link.value = '';
+    this.refs.price.value='';
     //alert('trying to create an item with description ' + description + 'rating' + rating);
-    this.addItem(description, link, rating);
+    this.addItem(description, link, rating, price);
   },
 
-  addItem: function(itemDescription, link, rating){
-    var testData = {"projname": itemDescription, "htmlLink": link, "rating": rating, "chosen": false };
+  addItem: function(itemDescription, link, rating, price){
+    var testData = {"projname": itemDescription, "htmlLink": link, "rating": rating, "chosen": false , "price": price};
     var creationRequest = 
       $.ajax({
         type: 'POST',
@@ -86,7 +89,8 @@ const Project = React.createClass({
         <form id="add-form" onSubmit={this.handleSubmit}>
           <input id="create" ref="description" type="textarea" placeholder="Add Something to the list!" />
           <input ref="link" type="text" placeholder="link" />
-          <input ref="rating" type="text" placeholder="rating" />
+          <input ref="price" type="text" placeholder="price (ex. $4.00)" />
+          <input ref="rating" type="text" placeholder="recommended 1-10" />
           <button type="submit">Submit</button> 
         </form>
           

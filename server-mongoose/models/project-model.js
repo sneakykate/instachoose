@@ -18,6 +18,7 @@ const projectSchema = new Schema({
 	start: Date,
 	end: Date,
   rating: Number,
+  price: String,
   chosen: Boolean,
   projItems: [{ type: Schema.Types.ObjectId, ref: 'Item' }],
 });
