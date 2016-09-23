@@ -16,6 +16,7 @@ const ChoiceItem = React.createClass({
       let id = item._id;
       let link = item.htmlLink;
       let chosen = item.chosen;
+      let price = item.price;
       
       let chosenSym = 'x'
       if(chosen === false){
@@ -31,6 +32,7 @@ const ChoiceItem = React.createClass({
       choiceItems.push(
         <div key={id} className="item">
           <div className="projectinfo"><a href={link}>{project}</a></div>
+          <div className="price">{price}</div>
           <div className="rating">{rating}</div>
           <div className="chosen">{chosenSym}</div>
         </div>
@@ -40,7 +42,8 @@ const ChoiceItem = React.createClass({
     return (
       <div className="container" >
         <div className="projectinfo header" onClick={this.updateSort.bind(this, 'projname')}>Items</div>
-        <div className="rating header" onClick={this.updateSort.bind(this, 'rating')}>Score</div>
+        <div className="price header" onClick={this.updateSort.bind(this, 'price')}>Price</div>
+        <div className="price header" onClick={this.updateSort.bind(this, 'rating')}>Rec</div>
         <div className="chosen header" onClick={this.updateSort.bind(this, 'chosen')}>Chosen</div>
         {choiceItems}
       </div>
