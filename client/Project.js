@@ -1,10 +1,11 @@
-const React = require('react');
-const ChoiceItem = require('./ChoiceItem');
-
+import React from 'react';
+import ChoiceItem from './ChoiceItem';
 
 // Project, Contains multiple ChoiceItems
 
-const Project = React.createClass({
+const Project = ({state}) =>{
+
+}
   getInitialState() {
     return {
       submitter: true,
@@ -15,7 +16,6 @@ const Project = React.createClass({
   componentDidMount() {
     // go get API items
     this.getData();
-    console.log('submitter is ' + this.state.submitter)
   },
 
   getData(){
@@ -53,11 +53,7 @@ const Project = React.createClass({
     creationRequest.done(this.getData());
   },
 
-  changeUser: function() {
-    let temp = {};
-    temp.submitter=!this.state.submitter;
-    this.setState(temp);
-  },
+ 
 
   sortfunc: function(field){
         var x = this.state.choices;
@@ -81,7 +77,6 @@ const Project = React.createClass({
     },
 
   render() {
-    // put render logic here
     var viewing;
     if(this.state.submitter===true){
       viewing = <div>
