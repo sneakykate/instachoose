@@ -17,6 +17,9 @@ const App = () => {
 const initialState = {
       form_showing: true,
       allItems_showing: true,
+      project_props:{
+        url: url,
+      }
   }
 
 const funcs = {
@@ -31,7 +34,10 @@ const funcs = {
     });
   },
 }
-
+componentDidMount() {
+    // go get API items
+    this.funcs.getData();
+  },
 
   render() {
     return (
